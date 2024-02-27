@@ -1,0 +1,77 @@
+<% include ./partials/header.ejs %> <% include ./partials/navbar.ejs/%>
+
+<div class="w-full">
+  <hr class="mt-12" />
+  <div class="flex ml-20 h-[43.5vw] border-l border-l-zinc-300">
+    <div class="overflow-x-hidden">
+      <h1 class="text-xl font-semibold p-6">Create Pin</h1>
+      <hr class="mt-2 w-screen" />
+
+      <form
+        class="flex"
+        action="/createpost"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div
+          class="bg-zinc-200 w-80 h-[30vw] rounded-3xl border border-dashed border-zinc-400 ml-28 mt-10 mr-20"
+        >
+          <input hidden type="file" name="filename" id="postimage" />
+          <i
+            id="add"
+            class="ri-add-circle-fill text-4xl flex justify-center items-center mt-36 cursor-pointer"
+          ></i>
+          <h4 class="text-center m-4" id="caption">Choose a file to upload</h4>
+          <h4 class="text-center text-xs m-4" id="filename"></h4>
+        </div>
+
+        <div class="flex flex-col mt-10">
+          <label class="font-medium" for="title">Title</label>
+          <input
+            class="bg-zinc-200 rounded-xl w-[50vw] p-4"
+            type="text"
+            name="title"
+            placeholder="Add a title"
+          />
+          <label class="font-medium mt-4" for="description">Description</label>
+          <textarea
+            rows="8"
+            class="bg-zinc-200 rounded-xl w-[50vw] p-4"
+            type="textarea"
+            name="description"
+            placeholder="Add a description"
+          ></textarea>
+          <div class="flex">
+            <input
+              class="bg-[#D50C22] rounded-full p-3 font-semibold text-white mt-6 cursor-pointer"
+              type="submit"
+              value="submit"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelector("#add").addEventListener("click", function () {
+    document.querySelector("#postimage").click();
+  });
+  document.querySelector("#postimage").addEventListener("change", function () {
+    const fileInput = document.querySelector("#postimage");
+    const fileNameDisplay = document.querySelector("#filename");
+    const toHide = document.querySelector("#caption");
+
+    // Check if a file is selected
+    if (fileInput.files.length > 0) {
+        const fileName = fileInput.files[0].name;
+        fileNameDisplay.textContent = 'Selected file: ' + fileName;
+        toHide.textContent = " "
+    } else {
+        fileNameDisplay.textContent = 'No file selected';
+    }
+});
+</script>
+
+<% include ./partials/footer.ejs %>

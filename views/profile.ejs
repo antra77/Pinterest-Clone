@@ -1,0 +1,67 @@
+<% include ./partials/header.ejs %> <% include ./partials/navbar.ejs/%>
+
+<div class="flex flex-col items-center justify-center mt-16">
+  <form
+    hidden
+    id="uploadform"
+    action="/fileupload"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <input type="file" name="image" />
+  </form>
+  <div class="bg-zinc-200 w-32 h-32 rounded-full overflow-hidden">
+    <img
+      class="w-full h-full object-cover"
+      src="/images/uploads/<%= user.profileImage%>"
+      alt=""
+    />
+  </div>
+  <h1 class="text-4xl font-semibold mt-4"><%=user.name%></h1>
+  <h6 class="text-zinc-400 font-light text-sm mt-3">@<%= user.username %></h6>
+  <h3 class="text-zinc-700 font-medium mt-2">56 followers . 167 following</h3>
+  <div class="button flex justify-center items-center mt-3 gap-3">
+    <button class="bg-zinc-200 rounded-full p-4 font-semibold text-zinc-800">
+      Share
+    </button>
+    <button
+      id="fileupload"
+      class="bg-zinc-200 rounded-full p-4 font-semibold text-zinc-800"
+    >
+      Edit Profile
+    </button>
+  </div>
+</div>
+<div class="cards flex flex-wrap gap-10 mt-10 px-10">
+  <div class="cards">
+    <div class="w-52 h-40 bg-zinc-200 rounded-lg overflow-hidden">
+      <img
+        class="w-full h-full object-cover"
+        src="/images/uploads/<%= user?.post[0]?.image %>"
+        alt=""
+      />
+    </div>
+    <a
+      href="/show/posts"
+      class="inline-block cursor-pointer text-lg font-semibold mt-3"
+      >All pins</a
+    >
+    <h5 class="text-sm text-zinc-500 font-light">
+      <%= user.post.length %> pins
+    </h5>
+  </div>
+</div>
+
+<script>
+  document.querySelector("#fileupload").addEventListener("click", function () {
+    document.querySelector("#uploadform input").click();
+  });
+
+  document
+    .querySelector("#uploadform input")
+    .addEventListener("change", function () {
+      document.querySelector("#uploadform").submit();
+    });
+</script>
+
+<% include ./partials/footer.ejs %>

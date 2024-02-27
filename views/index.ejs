@@ -1,0 +1,60 @@
+<% include ./partials/header.ejs %>
+
+<div
+  class="w-full h-screen bg-[url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]"
+>
+  <div
+    class="relative w-full h-screen flex justify-center items-center backdrop-brightness-50"
+  >
+    <div class="w-96 h-[40vw] bg-white rounded-3xl drop-shadow-2xl">
+      <div class="flex flex-col justify-center items-center p-6">
+        <img
+          class="w-16 h-16"
+          src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png"
+          alt="pin"
+        />
+        <h1 class="text-2xl font-semibold">Log in to see more</h1>
+        <form class="flex flex-col mt-5 w-72" action="/login" method="post">
+          <label class="px-4" for="username">Username</label>
+          <input
+            class="border border-red-100 outline-red-400 rounded-xl m-2 px-2 py-3"
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username"
+          />
+          <label class="px-4" for="password">Password</label>
+          <input
+            class="border border-red-100 outline-red-400 rounded-xl m-2 px-2 py-3"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="password"
+          />
+          <a class="text-sm font-medium" href="#">Forgot your password?</a>
+          <input
+            class="bg-[#D50C22] rounded-full mt-3 py-3 text-white font-medium cursor-pointer"
+            type="submit"
+            value="Login"
+          />
+          <p class="text-[10px] p-4 text-center">
+            By continuing, you agree to Pinterest's
+            <span class="font-bold">Terms of Service</span>
+            and acknowledge you've read our
+            <span class="font-bold">Privacy Policy</span>.
+            <span class="font-bold">Notice at collection</span>.
+          </p>
+        </form>
+        <a class="font-semibold text-sm" href="/register"
+          >Don't have an account? Sign up.</a
+        >
+      </div>
+    </div>
+  </div>
+  <a
+    class="absolute top-5 m-10 px-3 py-2 rounded-full bg-white text-black font-bold"
+    href="/register"
+  >Sign up</a>
+</div>
+
+<% include ./partials/footer.ejs %>

@@ -1,0 +1,28 @@
+<% include ./partials/header.ejs %> <% include ./partials/navbar.ejs/%>
+
+<div class="w-full min-h-screen mt-20 px-10 py-8">
+  <div class="cards flex flex-wrap gap-10">
+    <% post.forEach(function(elem){%>
+    <div class="w-52">
+      <div class="w-full h-40 rounded-lg overflow-hidden">
+        <img
+          class="w-full h-full object-cover"
+          src="/images/uploads/<%= elem.image %>"
+          alt=""
+        />
+      </div>
+      <h3 class="mt-2 text-sm tracking-tight"><%= elem.title %></h3>
+      <div class="flex gap-2 mt-2">
+        <img
+          src="/images/uploads/<%= elem.user.profileImage %>"
+          alt="Profile Image"
+          class="w-6 h-6 rounded-full"
+        />
+        <h6 class="text-xs opacity-500">@<%= elem.user.username %></h6>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+
+<% include ./partials/footer.ejs %>
