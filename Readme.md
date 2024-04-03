@@ -26,7 +26,7 @@ Welcome to the Pinterest Clone project, a web application inspired by Pinterest'
 
 ## Demo
 
-Check out the live demo of our Pinterest Clone:
+Check out the live demo of my Pinterest Clone:
 
 ![Live Demo](./demo.gif)
 
