@@ -1,10 +1,10 @@
 <% include ./partials/header.ejs %> <% include ./partials/navbar.ejs/%>
 
 <div class="w-full min-h-screen mt-20 px-10 py-8">
-  <div class="cards flex flex-wrap gap-10">
+  <div class="cards flex flex-wrap gap-12">
     <% post.forEach(function(elem){%>
     <div class="w-52">
-      <div class="w-full h-40 rounded-lg overflow-hidden">
+      <div class="w-full h-80 rounded-lg overflow-hidden">
         <img
           class="w-full h-full object-cover"
           src="/images/uploads/<%= elem.image %>"

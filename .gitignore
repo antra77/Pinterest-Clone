@@ -39,3 +39,6 @@ jspm_packages
 images
 
 bin
+
+#environment variables
+.env
