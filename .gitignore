@@ -43,8 +43,3 @@ bin
 #environment variables
 .env
 
-# Sapper
-sapper
-__sapper__/build/
-__sapper__/export/
-__sapper__/dev/
