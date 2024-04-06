@@ -22,7 +22,14 @@ Welcome to the Pinterest Clone project, a web application inspired by Pinterest'
 
 ## Preview
 
+### Login Page
 ![Pinterest Clone Preview](/public/assets/pinterest-clone.png)
+
+### Register Page
+![Pinterest Clone Preview](/pin2.png)
+
+### Home Page
+![Pinterest Clone Preview](/pin3.png)
 
 ## Demo
 
